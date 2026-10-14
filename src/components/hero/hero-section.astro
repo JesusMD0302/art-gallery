@@ -4,7 +4,7 @@ import { buttonVariants } from "../ui/button";
 import heroImage from "@/assets/images/hero-image.jpg";
 ---
 
-<section class="hero-section grid h-216.5 relative">
+<section id="hero" class="hero-section grid h-216.5 relative">
   <div
     class="hero-content hero-area order-2 z-10 max-h-full max-w-6xl mx-auto flex flex-col justify-center"
   >
@@ -17,7 +17,9 @@ import heroImage from "@/assets/images/hero-image.jpg";
         extraordinarios y encuentra nuevas formas de ver el mundo a través del
         arte.
       </p>
-      <a href="#" class={`${buttonVariants()} w-fit`}>Explora la colección</a>
+      <a href="/#gallery" class={`${buttonVariants()} w-fit`}
+        >Explora la colección</a
+      >
     </section>
   </div>
   <div class="hero-image w-full max-h-216.5 hero-area order-1 z-0">

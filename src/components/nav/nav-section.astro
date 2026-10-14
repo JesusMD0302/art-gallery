@@ -1,0 +1,49 @@
+---
+import { ExternalLink } from "lucide-react";
+import { buttonVariants } from "../ui/button";
+---
+
+<header
+  id="header"
+  class="w-full py-3 fixed top-0 z-100 bg-transparent transition-all duration-300"
+>
+  <div class="max-w-6xl px-4 lg:px-0 mx-auto flex justify-between">
+    <a
+      href="/"
+      class={buttonVariants({
+        variant: "ghost",
+        class: "font-heading text-xl font-bold",
+      })}>Áurea</a
+    >
+    <nav>
+      <a href="/#hero" class={buttonVariants({ variant: "ghost" })}>Inicio</a>
+      <a href="/#services" class={buttonVariants({ variant: "ghost" })}
+        >Servicios</a
+      >
+      <a href="/#gallery" class={buttonVariants({ variant: "ghost" })}
+        >Colección</a
+      >
+    </nav>
+    <div>
+      <a href="/#contact" class={buttonVariants()}>Nosotros <ExternalLink /></a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const navbar = document.querySelector("#header");
+
+  function handleScroll() {
+    if (!navbar) return;
+
+    const isScrolled = window.scrollY > 50;
+
+    navbar.classList.toggle("bg-transparent", !isScrolled);
+    navbar.classList.toggle("bg-muted-foreground/90", isScrolled);
+    navbar.classList.toggle("text-muted", isScrolled);
+    navbar.classList.toggle("shadow-md", isScrolled);
+  }
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  handleScroll;
+</script>
