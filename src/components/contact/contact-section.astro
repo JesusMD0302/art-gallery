@@ -1,0 +1,51 @@
+---
+import ContactForm from "@/components/contact/contact-form";
+import { buttonVariants } from "../ui/button";
+import { Mail, MapPin, Phone } from "lucide-react";
+---
+
+<section
+  class="py-24 bg-[url('/images/contact-bg.jpg')] bg-cover bg-center relative"
+>
+  <div
+    class="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-white/50 to-transparent"
+  >
+  </div>
+  <div
+    class="max-w-6xl mx-auto px-4 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-6 items-center relative"
+  >
+    <section class="grid gap-2">
+      <header class="h-fit">
+        <h2 class="font-heading font-bold text-5xl">
+          Cuéntanos qué tienes en mente.
+        </h2>
+        <p class="text-base font-medium mt-2">
+          Tanto si buscas una obra especial como si quieres exponer tu trabajo u
+          organizar un evento, nos encantará conocer tu proyecto.
+        </p>
+      </header>
+      <section class="flex flex-col items-baseline gap-2 mt-4">
+        <a
+          href=""
+          class={buttonVariants({
+            variant: "link",
+          })}><Phone /> +01234567890</a
+        >
+        <a
+          href=""
+          class={buttonVariants({
+            variant: "link",
+          })}><Mail /> hola@tugaleria.com</a
+        >
+        <a
+          href=""
+          class={buttonVariants({
+            variant: "link",
+          })}><MapPin /> C. 72 497, Parque Santiago, Centro, Mérida, Yuc.</a
+        >
+      </section>
+    </section>
+
+    <ContactForm client:load />
+  </div>
+</section>
