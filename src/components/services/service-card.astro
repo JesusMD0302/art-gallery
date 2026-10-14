@@ -1,0 +1,39 @@
+---
+import { ArrowRight } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  label?: string;
+}
+
+const { title, description, href, label } = Astro.props;
+---
+
+<Card
+  className="shadow-none border-none ring-0 hover:shadow-md hover:ring-1 transition-all duration-300"
+>
+  <CardHeader>
+    <CardTitle>{title}</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <div class="flex flex-col items-start justify-between">
+      <p>
+        {description}
+      </p>
+      <a
+        href={href}
+        class={buttonVariants({
+          variant: "link",
+          class: "mt-4 justify-self-end-safe",
+        })}
+      >
+        {label || "Más información"}
+        <ArrowRight />
+      </a>
+    </div>
+  </CardContent>
+</Card>

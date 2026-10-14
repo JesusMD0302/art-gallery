@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import { buttonVariants } from "../ui/button";
+import heroImage from "@/assets/images/hero-image.jpg";
+---
+
+<section id="hero" class="hero-section grid h-216.5 relative">
+  <div
+    class="hero-content hero-area order-2 z-10 max-h-full max-w-6xl mx-auto p-4 lg:p-0 flex flex-col justify-center"
+  >
+    <section class="w-full lg:w-2/3 grid gap-4">
+      <h1 class="font-heading text-3xl md:text-6xl font-bold">
+        El arte que transforma espacios y despierta emociones.
+      </h1>
+      <p class="font-body text-lg font-light text-muted-foreground">
+        Descubre obras que cuentan historias, conecta con artistas
+        extraordinarios y encuentra nuevas formas de ver el mundo a través del
+        arte.
+      </p>
+      <a href="/#gallery" class={`${buttonVariants()} w-fit`}
+        >Explora la colección</a
+      >
+    </section>
+  </div>
+  <div class="hero-image w-full max-h-216.5 hero-area order-1 z-0">
+    <Image
+      src={heroImage}
+      alt="Hero Image"
+      class="w-full h-full object-cover object-left grayscale-25"
+    />
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    grid-template-areas: "hero-area";
+  }
+
+  .hero-area {
+    grid-area: hero-area;
+  }
+</style>

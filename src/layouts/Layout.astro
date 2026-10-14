@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import SonnerLayout from "./sonner-layout";
 ---
 
 <!doctype html>
@@ -10,9 +11,14 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Descubre Áurea, una galería de arte con obras y exposiciones para inspirarte."
+    />
     <title>Áurea - Galería de Arte</title>
   </head>
-  <body>
+  <body class="relative">
     <slot />
+    <SonnerLayout client:load />
   </body>
 </html>
