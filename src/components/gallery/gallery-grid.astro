@@ -1,0 +1,60 @@
+---
+import GalleryCard from "./gallery-card.astro";
+import EcosDeColor from "@/assets/images/gallery/ecos-de-color.jpg";
+import Horizontes from "@/assets/images/gallery/horizontes.jpg";
+import JardinInterior from "@/assets/images/gallery/jardin-interior.jpg";
+import FormasVivas from "@/assets/images/gallery/formas-vivas.jpg";
+import LoQueElCieloCalla from "@/assets/images/gallery/lo-que-el-cielo-calla.jpg";
+import GeometriaSalvaje from "@/assets/images/gallery/geometria-salvaje.jpg";
+---
+
+<div class="grid grid-cols-1 gap-2 md:grid-cols-12 md:auto-rows-16.25 md:gap-6">
+  <GalleryCard
+    name="Lo que el cielo calla"
+    type="Pintura"
+    price={7100}
+    alt="Obra:Lo que el cielo calla"
+    src={LoQueElCieloCalla}
+    class="md:col-start-1 md:col-span-4 md:row-start-1 md:row-span-8"
+  />
+  <GalleryCard
+    name="Jardín interior"
+    type="Pintura"
+    price={7900}
+    alt="Obra:Jardín interior"
+    src={JardinInterior}
+    class="md:col-start-5 md:col-span-8 md:row-start-1 md:row-span-4"
+  />
+  <GalleryCard
+    name="Horizontes"
+    type="Paisajismo"
+    price={6200}
+    alt="Obra:Horizontes"
+    src={Horizontes}
+    class="md:col-start-5 md:col-span-4 md:row-start-5 md:row-span-4"
+  />
+  <GalleryCard
+    name="Formas vivas"
+    type="Escultura"
+    price={9400}
+    alt="Obra:Formas vivas"
+    src={FormasVivas}
+    class="md:col-start-9 md:col-span-4 md:row-start-5 md:row-span-8"
+  />
+  <GalleryCard
+    name="Ecos de color"
+    type="Arte abstracto"
+    price={8500}
+    alt="Obra:Ecos de color"
+    src={EcosDeColor}
+    class="md:col-start-1 md:col-span-8 md:row-start-9 md:row-span-8"
+  />
+  <GalleryCard
+    name="Geometría salvaje"
+    type="Escultura"
+    price={8600}
+    alt="Obra: Geometría salvaje"
+    src={GeometriaSalvaje}
+    class="md:col-start-9 md:col-span-4 md:row-start-13 md:row-span-4"
+  />
+</div>

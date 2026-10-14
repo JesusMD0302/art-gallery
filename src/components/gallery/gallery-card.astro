@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { cn } from "cn";
+
+interface Props {
+  name: string;
+  type: "Arte abstracto" | "Paisajismo" | "Pintura" | "Escultura";
+  price: number;
+  src: ImageMetadata;
+  alt: string;
+  class?: string;
+}
+
+const { name, type, price, src, alt, class: className } = Astro.props;
+---
+
+<article
+  class={cn([
+    "gallery-card group relative min-h-80 overflow-hidden bg-[#eae8e1] md:min-h-0 h-full",
+    className,
+  ])}
+>
+  <div class="gallery-item h-fit py-6 px-8 absolute z-10">
+    <h3 class="font-heading text-2xl font-bold">{name}</h3>
+    <p class="text-sm font-medium">{type}</p>
+    <p class="text-lg font-medium">${price} MXN</p>
+  </div>
+  <div class="gallery-item h-full w-full relative z-0">
+    <Image
+      src={src}
+      alt={alt}
+      class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+    />
+  </div>
+  <div
+    class="absolute inset-0 bg-linear-to-b from-white/30 via-transparent to-transparent"
+  >
+  </div>
+</article>
